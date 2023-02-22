@@ -1,24 +1,79 @@
-# README
+## Introduction
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a server boilerplate using GraphQL and MongoDB. Support subscriptions using GraphQL Yoga. 
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+1. Clone this repo using
+```
+https://github.com/aliraxa-hub/GraphQL-Rails.git
+```
+2. Move to the appropriate directory: 
+```
+cd GraphQL-Rails
+``` 
+3. Install dependencies using.
+```
+bundle install
+```
+4. Set `.env` file with your mongoURI and past the database connection link from mongodb atlas.
 
-* System dependencies
+5. Run Server by using
+```
+rails server
+``` 
+6. See the example app at 
+```
+http://localhost:3000/graphiql
+```
 
-* Configuration
+## Commands
 
-* Database creation
+```
+rails server
+or
+rails s
+```
+start the playground at 
+```
+http://localhost:3000/graphiql
+```
 
-* Database initialization
+## Query
 
-* How to run the test suite
+This Query is used to get all the records
+```
+{
+  duelists {
+    name
+    rank
+    cards {
+      name
+      id
+      attack
+      defense
+      decks {
+        name
+        id
+      }
+    }
+  }
+}
 
-* Services (job queues, cache servers, search engines, etc.)
+```
 
-* Deployment instructions
-
-* ...
+### This Query is used to get records based on card id
+```
+{
+  card(id: 2) {
+    id
+    name
+    attack
+    defense
+    decks {
+      id
+      name
+    }
+  }
+}
+```
