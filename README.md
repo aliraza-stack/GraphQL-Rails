@@ -1,6 +1,6 @@
 ## Introduction
 
-This is a server boilerplate using GraphQL and MongoDB. Support subscriptions using GraphQL Yoga. 
+This is a server boilerplate using GraphQL in RailsB.
 
 ## Getting started
 
@@ -15,14 +15,16 @@ cd GraphQL-Rails
 3. Install dependencies using.
 ```
 bundle install
+rails db:create
+rails db:migrate
+rails db:seed
 ```
-4. Set `.env` file with your mongoURI and past the database connection link from mongodb atlas.
 
-5. Run Server by using
+4. Run Server by using
 ```
 rails server
 ``` 
-6. See the example app at 
+5. See the example app at 
 ```
 http://localhost:3000/graphiql
 ```
